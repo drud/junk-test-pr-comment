@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - run: tar -czf /tmp/files.tar.gz
+      - run: tar -czf /tmp/files.tar.gz .
 
       - name: Upload all artifacts
         uses: actions/upload-artifact@v3
