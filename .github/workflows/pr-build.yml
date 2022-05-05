@@ -22,8 +22,8 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - run: |
-        mkdir -p ${{ github.workspace }}/artifacts
-        tar -cf ${{ github.workspace }}/artifacts/files.tar .
+          mkdir -p ${{ github.workspace }}/artifacts
+          tar -cf ${{ github.workspace }}/artifacts/files.tar .
 
       - name: Upload all artifacts
         uses: actions/upload-artifact@v3
