@@ -21,12 +21,12 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - run: mkdir -p ${{ github.workspace }}/artifacts && touch ${{ github.workspace }}/artifacts/test.txt
+      - run: tar -czf /tmp/files.tar.gz
 
       - name: Upload all artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: my-dummy-file
-          path: ${{ github.workspace }}/artifacts/*
+          name: files.tar.gz
+          path: /tmp/files.tar.gz
 
 
